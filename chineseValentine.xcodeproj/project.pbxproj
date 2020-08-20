@@ -13,6 +13,7 @@
 		64BBA99C24EE47810092D01C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64BBA99A24EE47810092D01C /* Main.storyboard */; };
 		64BBA99E24EE47830092D01C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64BBA99D24EE47830092D01C /* Assets.xcassets */; };
 		64BBA9A124EE47830092D01C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64BBA99F24EE47830092D01C /* LaunchScreen.storyboard */; };
+		64BBA9A924EE4F250092D01C /* showTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BBA9A824EE4F250092D01C /* showTimeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		64BBA99D24EE47830092D01C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64BBA9A024EE47830092D01C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64BBA9A224EE47830092D01C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64BBA9A824EE4F250092D01C /* showTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showTimeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				64BBA99624EE47810092D01C /* SceneDelegate.swift */,
 				64BBA99824EE47810092D01C /* ViewController.swift */,
 				64BBA99A24EE47810092D01C /* Main.storyboard */,
+				64BBA9A824EE4F250092D01C /* showTimeViewController.swift */,
 				64BBA99D24EE47830092D01C /* Assets.xcassets */,
 				64BBA99F24EE47830092D01C /* LaunchScreen.storyboard */,
 				64BBA9A224EE47830092D01C /* Info.plist */,
@@ -139,6 +142,7 @@
 			files = (
 				64BBA99924EE47810092D01C /* ViewController.swift in Sources */,
 				64BBA99524EE47810092D01C /* AppDelegate.swift in Sources */,
+				64BBA9A924EE4F250092D01C /* showTimeViewController.swift in Sources */,
 				64BBA99724EE47810092D01C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

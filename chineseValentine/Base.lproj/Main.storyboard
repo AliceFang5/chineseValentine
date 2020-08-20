@@ -1,24 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17147" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17120"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Show Time View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="showTimeViewController" customModule="chineseValentine" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="77background" translatesAutoresizingMaskIntoConstraints="NO" id="TBF-c9-GmU">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="2vy-cU-i2X">
+                                <rect key="frame" x="47" y="340" width="320" height="216"/>
+                                <connections>
+                                    <action selector="getDatePicker:" destination="BYZ-38-t0r" eventType="valueChanged" id="oWm-qx-qOH"/>
+                                </connections>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="傳說...牛郎怕錯過約會的時間做了一個App提醒自己..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVu-0X-DZC">
+                                <rect key="frame" x="20" y="56" width="324" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="324" id="KlA-WP-Ss3"/>
+                                    <constraint firstAttribute="height" constant="69" id="Yhj-Uz-FE6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" systemColor="systemTealColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1Lu-JQ-BxH">
+                                <rect key="frame" x="47" y="596" width="320" height="173"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="與織女約定的時間是" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbV-Gc-BVR">
+                                        <rect key="frame" x="0.0" y="0.0" width="156" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020 08 25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pg-Ir-2VE">
+                                        <rect key="frame" x="0.0" y="30.5" width="90" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="現在的時間是" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQw-nC-waZ">
+                                        <rect key="frame" x="0.0" y="61" width="104" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020 08 20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ti-oj-ctM">
+                                        <rect key="frame" x="0.0" y="91.5" width="90" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="距離七夕還有" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2DJ-Oe-eNG">
+                                        <rect key="frame" x="0.0" y="122" width="104" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5天3小時" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FsZ-Sc-FI7">
+                                        <rect key="frame" x="0.0" y="152.5" width="72.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="6ti-oj-ctM" firstAttribute="top" secondItem="nQw-nC-waZ" secondAttribute="bottom" constant="10" id="HtD-fa-AWn"/>
+                                    <constraint firstItem="2DJ-Oe-eNG" firstAttribute="top" secondItem="6ti-oj-ctM" secondAttribute="bottom" constant="10" id="Mzj-Ag-x83"/>
+                                    <constraint firstItem="7pg-Ir-2VE" firstAttribute="top" secondItem="wbV-Gc-BVR" secondAttribute="bottom" constant="10" id="jPR-rD-rM4"/>
+                                    <constraint firstItem="nQw-nC-waZ" firstAttribute="top" secondItem="7pg-Ir-2VE" secondAttribute="bottom" constant="10" id="qv3-Ns-eh6"/>
+                                    <constraint firstItem="FsZ-Sc-FI7" firstAttribute="top" secondItem="2DJ-Oe-eNG" secondAttribute="bottom" constant="10" id="yPF-N2-OTQ"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2vy-cU-i2X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1iY-5X-ZDP"/>
+                            <constraint firstItem="TBF-c9-GmU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7yl-aL-ixo"/>
+                            <constraint firstItem="1Lu-JQ-BxH" firstAttribute="trailing" secondItem="2vy-cU-i2X" secondAttribute="trailing" id="DTC-KF-VDe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TBF-c9-GmU" secondAttribute="bottom" id="FXk-JF-530"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TBF-c9-GmU" secondAttribute="trailing" id="Ght-wz-9Ob"/>
+                            <constraint firstItem="1Lu-JQ-BxH" firstAttribute="top" secondItem="2vy-cU-i2X" secondAttribute="bottom" constant="40" id="IGj-ye-kXu"/>
+                            <constraint firstItem="pVu-0X-DZC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="MmL-a5-MKC"/>
+                            <constraint firstItem="2vy-cU-i2X" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="iez-CA-koo"/>
+                            <constraint firstItem="pVu-0X-DZC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="rwy-yf-Woe"/>
+                            <constraint firstItem="1Lu-JQ-BxH" firstAttribute="leading" secondItem="2vy-cU-i2X" secondAttribute="leading" id="uJw-Tv-P1J"/>
+                            <constraint firstItem="TBF-c9-GmU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yiF-OZ-39w"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="datePicker" destination="2vy-cU-i2X" id="fNY-Vb-dVN"/>
+                        <outletCollection property="timeLabel" destination="7pg-Ir-2VE" collectionClass="NSMutableArray" id="21t-RY-Ze4"/>
+                        <outletCollection property="timeLabel" destination="6ti-oj-ctM" collectionClass="NSMutableArray" id="xKt-Tc-qAL"/>
+                        <outletCollection property="timeLabel" destination="FsZ-Sc-FI7" collectionClass="NSMutableArray" id="qDs-5x-qCJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="79.6875"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="77background" width="341" height="512"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
