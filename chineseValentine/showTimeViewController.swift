@@ -31,15 +31,15 @@ class showTimeViewController: UIViewController {
     func checkDatePicker(){
         let date = datePicker.date
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
+        formatter.dateFormat = "yyyy/MM/dd EEEE HH:mm"
         timeLabel[0].text = formatter.string(from: date)
         //calculate time
         calcutateTime(time: Int(date.timeIntervalSinceNow))
     }
     func initDatePicker(){
-        let dateInit = "2020/08/25 07:00"
+        let dateInit = "2020/09/25 Friday 07:00"
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd HH:mm"
+        formatter.dateFormat = "yyyy/MM/dd EEEE HH:mm"
         let datePickerInit = formatter.date(from: dateInit)!
         datePicker.setDate(datePickerInit, animated: true)
         timeLabel[0].text = dateInit
@@ -51,9 +51,25 @@ class showTimeViewController: UIViewController {
     func getCurrentTime(){
         let now = Date()
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
+        formatter.dateFormat = "yyyy/MM/dd EEEE HH:mm"
         let time = formatter.string(from: now)
         timeLabel[1].text = time
+
+        //calendar format practice
+//        let today = Date()
+//        let dateComponents = Calendar.current.dateComponents(in: TimeZone.current, from: today)
+//        let weekday = dateComponents.weekday
+//        var weekdayString = "Weekday"
+//        switch weekday {
+//        case 1:
+//            weekdayString = "Sunday"
+//        case 2:
+//            weekdayString = "Monday"
+//        default:
+//            weekdayString = "Default"
+//        }
+//        timeLabel[1].text = "\(String(describing: dateComponents.year!))/\(String(describing: dateComponents.month!))/\(String(describing: dateComponents.day!)) \(weekdayString)"
+    
     }
     func calcutateTime(time:Int){
         guard time > 0 else {
